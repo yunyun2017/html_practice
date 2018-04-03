@@ -2,9 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>practice</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+        }
+        .wrapper-up {
+            height: 50%;
+            background-color: blue;
+        }
+        .wrapper-down {
+            height: 50%;
+            position: relative;
+
+        }
+        .div-square-left {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: orange;
+            border-right: 1px solid #111;
+            box-sizing: border-box;
+        }
+        .div-square-right {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            background-color: green;
+
+        }
+
+    </style>
 </head>
 <body>
-$END$
+<div class="main">
+    <div class="wrapper-up">
+        <div class="div-square-up">
+
+        </div>
+    </div>
+    <div class="wrapper-down">
+        <div class="div-square-left"></div>
+        <div class="div-square-right"></div>
+    </div>
+</div>
 </body>
 </html>
