@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body{
+            font-size: 14px;
+            font-family: "Hiragino Sans GB","Microsoft Yahei",SimSun,Arial,"Helvetica Neue",Helvetica;
+            color: #333;
+            word-wrap: break-word;
+            -webkit-font-smoothing: antialiased
+        }
+        p{
+            margin: 0;
+        }
+        a{
+            color: #555;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        .company-item{
+            float: left;
+            width: 288px;
+            height: 270px;
+            margin-top: 16px;
+            margin-right: 16px;
+            border: 1px solid #eeeeee;
+        }
+        .top{
+            margin: 0 13px;
+            padding: 20px 0 14px;
+            text-align: center;
+            border-bottom: 1px dashed #E0E0E0;
+
+        }
+        .top p{
+            line-height: 22px;
+        }
+        img{
+            border: 0;
+            vertical-align: top;
+            display: inline-block;
+        }
+        .top .company-name{
+            height: 22px;
+            margin-top: 13px;
+            font-size: 16px;
+            color: #333;
+        }
+        .wordcut{
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            word-wrap: normal;
+        }
+        .top .indus-stage{
+            height: 22px;
+            margin-top: 3px;
+            color: #999;
+        }
+        .top .indus-stage span+span:before{
+            content: "/";
+        }
+        .top .advantage{
+            margin-top: 5px;
+            color: #555;
+        }
+        /*.bottom .bottom-1{*/
+            /*width: 90px;*/
+        /*}*/
+        .bottom{
+            display: flex;
+            flex-direction: row;
+        }
+        .bottom .bottom-item{
+            position: relative;
+            display: block;
+            margin-top: 17px;
+            text-align:center;
+            flex: auto;
+        }
+        .f1{
+            float: left;
+        }
+        .bottom .bottom-item p{
+            line-height: 1;
+        }
+        .green{
+            color: #00b38a;
+        }
+        .bottom .bottom-item p.grey{
+            margin-top: 4px;
+            font-size: 12px;
+            color: #999;
+        }
+        .clearfix:after{
+            clear: both;
+        }
+        .clearfix:before, .clearfix:after{
+            content: "";
+            display: table;
+        }
+        .bottom .bottom-item.bottom-1:after, .bottom .bottom-item.bottom-2:after{
+            position: absolute;
+            top: 0;
+            right: 0;
+            content: "";
+            height: 30px;
+            width: 1px;
+            background: #EDEDED;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="company-item">
+    <div class="top">
+        <p><a href="" target="_blank">
+            <img src="https://www.lgstatic.com/thumbnail_160x160/image1/M00/00/08/Cgo8PFTUWBCAcSJHAAB-yfiYxHM640.png"
+                 alt="公司logo" width="80" height="80">
+        </a></p>
+        <p class="company-name wordcut">
+            <a href="" target="_blank">同步推</a>
+        </p>
+        <p class="indus-stage wordcut">
+            <span>移动互联网</span>
+            <span>上市公司</span>
+        </p>
+        <p class="advantage wordcut">
+            公司专注于互联网、移动互联网与信息化互动社区，致力并服务于推动手机用户的沟通和娱乐。
+        </p>
+    </div>
+    <div class="bottom clearfix">
+        <a class="bottom-item bottom-1 f1" href="" target="_blank">
+            <p class="green">89</p>
+            <p class="grey">面试评价</p>
+        </a>
+        <a class="bottom-item bottom-2 f1" target="_blank">
+            <p class="green">89</p>
+            <p class="grey">在招职位</p>
+        </a>
+        <a class="bottom-item bottom-3 f1" target="_blank">
+            <p class="green">100%</p>
+            <p class="grey">简历处理率</p>
+        </a>
+    </div>
+    </div>
+</div>
+</body>
+</html>

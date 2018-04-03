@@ -1,0 +1,73 @@
+<!--该demo是模拟腾讯课堂首页点击【登录】按钮，出现带遮罩层的弹出窗口的效果(CSS和JS实现)-->
+<!--实现原理：默认情况下，遮挡层和弹出窗口是隐藏的，当点击【打开窗口】时，遮挡层和弹出窗口显示，
+并且遮挡层在底下，弹出窗口在遮挡层上面。-->
+<!--！！！问题：在弹出遮罩层和弹出窗口时，主页面的内容不显示了，关闭弹出窗口后，主页面的内容就显示了-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset=" utf-8">
+    <title>带有遮罩层的弹出窗口</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            /*visibility: visible;*/
+        }
+        /*设置遮挡层的效果*/
+        #fade{
+            display: none;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: #4f5964;
+            z-index: 1000;
+            opacity: 80;
+            -moz-opacity: 0.8;
+            filter: alpha(opacity=80);
+        }
+        /*设置弹出窗口的效果*/
+        #light{
+            display: none;
+            position: fixed;
+            background-color: #ffffff;
+            width: 500px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            margin-left: -250px;
+            margin-top: -150px;
+            z-index: 1002;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var openbt=document.getElementById("openbt");
+            var light=document.getElementById("light");
+            var closebt=document.getElementById("closebt");
+            var fade=document.getElementById("fade");
+            openbt.onclick=function(){  /*点击【点击这里打开窗口】,遮罩层和弹出窗口显示*/
+                fade.style.display = 'block';
+                light.style.display = 'block';
+            }
+            closebt.onclick = function(){   /*点击【关闭窗口】,遮罩层和弹出窗口隐藏*/
+                fade.style.display='none';
+                light.style.display='none';
+            }
+        }
+    </script>
+
+</head>
+<body style="height: 2000px" id="body">
+<a href="javascript:void(0)" id="openbt"> 点击这里打开窗口</a>
+<!--弹出窗口-->
+<div id="light"><a href="javascript:void(0)" id="closebt">关闭窗口</a></div>
+<!--为了设置遮挡层的效果-->
+<div id="fade"></div>
+<!--<div style="height: 200px;width:300px;background-color: red">div1</div>-->
+<!--<div style="height: 300px;width:300px;background-color: yellow">div1</div>-->
+</body>
+</html> 

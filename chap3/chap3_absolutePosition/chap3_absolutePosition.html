@@ -1,0 +1,51 @@
+<!--该demo是练习绝对定位布局的-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>绝对定位应用demo</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            background-color: lightgray;
+            width: 600px;
+        }
+        li{
+            background-color: blue;
+            color: #fff;
+            margin-bottom: 10px;
+            height: 60px;
+            line-height: 60px;/*实现li元素中的字体垂直居中的效果*/
+            position: relative;
+        }
+        /*要求：实现复选框在li元素右边，并且要对齐的效果*/
+        /*方法一：利用浮动来实现*/
+        /*input[type="checkbox"]{
+            float: right;
+            margin-right: 40px;
+            width: 20px;
+            height: 20px;
+            margin-top: 20px;
+        }*/
+        /*方法二：利用绝对定位来实现*/
+        input[type="checkbox"]{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 40px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>请选择已读过的书</h2>
+    <ul>
+        <li>hello code <input type="checkbox" /></li>
+        <li>master javascript in 21 days <input type="checkbox" /></li>
+        <li>js fullstack path <input type="checkbox" /></li>
+    </ul>
+</body>
+</html>

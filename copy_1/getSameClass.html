@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        li{
+            cursor: pointer;
+            -webkit-user-select: none;
+            margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+<div class="list">
+    <ul>
+        <li class="lis">1</li>
+        <li class="lis">2</li>
+        <li class="lis">3</li>
+        <li class="lis">4</li>
+        <li class="lis">5</li>
+    </ul>
+</div>
+</body>
+<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    //i为下标
+    //n为元素本身
+    var lis = document.getElementsByClassName('lis');//数组
+    var lisLen = lis.length;
+    for(var i = 0;i < lisLen;i++){
+        //var存在变量提升, lis[i].index = i 为事先存储元素的索引值。若不写，打印的元素索引值会一直是元素的总长度。
+//        lis[i].index = i;//想省略这句，在for循环中，可用es6中的let替换var
+//        lis[i].onclick = function(){
+//            console.log(this.index);//元素索引值
+//        }
+        console.log(lis[i].innerHTML);
+    }
+</script>
+</html>  

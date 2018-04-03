@@ -1,0 +1,77 @@
+<!--该demo是使用纯CSS来实现导航栏的下拉菜单-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实现导航栏的下拉菜单</title>
+    <style type="text/css">
+        body{
+            margin: auto;
+            text-align: center;
+        }
+        ul{
+            list-style-type: none;
+        }
+        .nav{
+            width: 600px;
+        }
+        /*以下设置一级导航菜单*/
+        .nav_menu{
+            width: 100px;
+            border-radius:10px;
+            background:linear-gradient(to bottom,#efefef,#bbbbbb);
+            float: left;
+            background-color: lightgray;
+            color: #ffffff;
+            padding: 0 20px;
+            display: inline-table;
+            position: relative;
+        }
+        .nav::after{
+            content: ".";
+            clear: both;
+            visibility: hidden;
+        }
+        .nav_menu:hover > ul{  /* 鼠标放在【视频】菜单上，下拉菜单显示出来*/
+            display: block;
+        }
+        .nav_menu:hover{    /*鼠标移到某个菜单上，该菜单背景色会发生变化*/
+            background: linear-gradient(to bottom,#4f5964,#5f6975);
+            color: blue;
+        }
+
+        /*以下设置二级导航菜单*/
+        .nav_menu_content{
+            width: 80%;
+            background-color: lightblue;
+            border-radius: 0;
+            display: none;
+            position: absolute;
+            top: 100%;
+            padding: 0;
+        }
+        .nav_menu_content>li{
+            border-top: 1px solid #6b727c;
+            border-bottom: 1px solid #575f6a;
+            color: #ffffff;
+        }
+        .nav_menu_content>li:hover{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav_menu">首页</li>
+        <li class="nav_menu">视频
+            <ul class="nav_menu_content">
+                <li>视频1</li>
+                <li>视频2</li>
+                <li>视频3</li>
+            </ul>
+        </li>
+        <li class="nav_menu">发现</li>
+        <li class="nav_menu">游戏</li>
+    </ul>
+</body>
+</html>

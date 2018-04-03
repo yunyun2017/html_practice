@@ -1,0 +1,34 @@
+<!--该demo是实现微博网页版首页上面水平排版的几个选项：首页、视频、发现、游戏等-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>li元素的水平排版</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        .clearfix li{
+            float: left;
+            padding-left: 2em;
+        }
+
+        .clearfix::after{
+            content: ".";
+            clear: both;
+            display: block;
+            visibility: hidden;
+            width: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="clearfix">
+        <li>首页</li>
+        <li>视频</li>
+        <li>发现</li>
+        <li>游戏</li>
+    </ul>
+</body>
+</html>

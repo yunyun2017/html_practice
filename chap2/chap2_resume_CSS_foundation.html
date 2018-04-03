@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>根叔个人简历</title>
+    <style>
+        body{
+            width: 1000px;
+            margin: 0 auto;
+            background-image: url("https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=e212bd21267f9e2f6438155a7e598241/00e93901213fb80e38756e1037d12f2eb8389454.jpg");
+            background-repeat: no-repeat;
+            background-position: 174.5px 0px;
+            background-size: 120px 110px;
+            /*text-align: center;*/
+        }
+        table{
+            margin: 0 auto;
+        }
+        ul,ol{
+            list-style-type: none;
+            text-align: center;
+        }
+        a{
+            text-decoration: underline;
+            color: green;
+        }
+        /*给【最牛毕业典礼】设置字体样式,上面给a标签设置字体是绿色，但是由于下面标签的优先级比较高，所以【最牛毕业典礼】
+        这个超链接的字体颜色是下面这个css样式，即蓝色的*/
+        #edu_job>a{
+            font: bold italic 20px serif;
+            color: blue;
+        }
+        /*给表格的奇数和偶数行添加不同的背景色*/
+        table tbody tr:nth-child(2n+1){
+            background-color: grey;
+        }
+        /*鼠标放在超链接上面，会发生效果的变化*/
+        a:hover{
+            background-color: blueviolet;
+            color: white;
+        }
+        /*h3的伪类选择器使用*/
+        h3:target{
+            background-color: yellow;
+        }
+        /*给h3标签的文字设置背景色浅灰色*/
+        h2,h3{
+            text-align: center;
+            background-color: gainsboro;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1 style="text-align: center">个人简历</h1>
+<!--img里面src属性放的是图片的地址，最后是jpg或者其他图片格式结尾的，而不是网页的网址-->
+<img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike72%2C5%2C5%2C72%2C24/sign=57f5ce985ddf8db1a8237436684ab631/f703738da9773912b88e4a61fb198618367ae202.jpg" width="200" height="200" style="padding-left: 400px"/>
+<h2>李培根（原华中科技大学校长）</h2>
+<strong>教授、博士生导师、工程院院士，原华科校长</strong>
+<p id="edu_job">曾任华中科技大学机械学院院长、副校长<a href="https://baike.baidu.com/item/%E6%9C%80%E7%89%9B%E6%AF%95%E4%B8%9A%E5%85%B8%E7%A4%BC" target="_blank">(最牛毕业典礼)</a></p>
+<p>联系方式:******@126.com</p>
+
+<h3 id="edu_work">学术兼职</h3>
+<ul id="edu_info">
+    <li>国家863/CIMS主题、国家863/机器人技术主题专家组成员</li>
+    <li>国家863先进制造及自动化领域专家委成员</li>
+    <li>中国机械工程学会副理事长 </li>
+    <li>湖北省机械工程学会理事长 </li>
+
+</ul>
+
+<h3 id="edu">教育背景</h3>
+<ol>
+    <li>1977年毕业于上海纺织学院（现东华大学）</li>
+    <li>1981年在华中工学院（现华中科技大学）获得硕士学位</li>
+    <li>1987年在美国威斯康辛·麦迪逊大学（University of Wisconsin-Madison）获得博士学位</li>
+</ol>
+
+<h3>工作履历</h3>
+<table>
+    <thead>
+    <tr>
+        <th>工作时间</th>
+        <th>工作地点</th>
+        <th>职位</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1987-1989</td>
+        <td>华中科技大学</td>
+        <td>讲师</td>
+    </tr>
+    <tr>
+        <td>1989-1991</td>
+        <td>华中科技大学</td>
+        <td>副教授</td>
+    </tr>
+    <tr>
+        <td>1989-1991</td>
+        <td>华中科技大学</td>
+        <td>教授</td>
+    </tr>
+    <tr>
+        <td>1989-1991</td>
+        <td>华中科技大学</td>
+        <td>副教授</td>
+    </tr>
+    <tr>
+        <td>1989-1991</td>
+        <td>华中科技大学</td>
+        <td>教授</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>研究领域</h3>
+<strong>机械与制造领域的教学与科研工作</strong>
+<p style="text-indent: 32px">他曾为国家863/CIMS主题、国家863/机器人技术主题专家组成员、国家863先进制造及自动化领域专家委成员，现为中国机械工程学会自动化专业委员会常务理事，并担任教育部机械工程教学指导委员会主任委员、全国高校制造自动化研究会理事长</p>
+
+<strong>制造业信息化</strong>
+<p style="text-indent: 2em">从上个世纪80年代后期开始，李培根在本单位主持CAPP（计算机辅助工艺规划）的研究与开发，通过研发并与开目公司和天喻公司合作，实现产业化，已形成国内具有自主版权的CAPP主导产品之一。2001年分获中国高校科技进步一等奖和国家科技进步二等奖。他组织建成制造业信息化服务网站e-works，已商业化运行，备受企业欢迎，成为国内访问量最大的同类网站之一。
+</p>
+
+<footer style="text-align: center">
+    <a href="#">回到顶部</a>
+    <a href="#edu_work">回到学术兼职</a>
+</footer>
+
+</body>
+</html>

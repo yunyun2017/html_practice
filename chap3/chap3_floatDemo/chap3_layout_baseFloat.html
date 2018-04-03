@@ -1,0 +1,61 @@
+<!--该demo是模拟微博的页面布局，分为左中右三栏-->
+<!DOCTYPE html>
+<html style="width: 100%"><!--这里设置100%，水平滚动条就没有啦-->
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>模拟微博页面布局</title>
+    <style type="text/css">
+        /*模拟微博页面的布局*/
+        /*div{*/
+            /*width: 1000px;*/
+            /*margin: 0 auto; *//*实现居中的效果*/
+            /*background-color: lightblue;*/
+            /*overflow: hidden;*/
+        /*}*/
+        /*模拟google drive页面的布局,p2宽度是自适应的*/
+        div{
+            width:100%;
+            background-color: lightblue;
+            overflow: hidden;
+        }
+        #p1{
+            width:150px;
+            height: 800px;
+            float: left;
+            background-color: blue;
+
+        }
+        /*#p2{
+            width: 600px;
+            height: 800px;
+            margin-right: 10px;
+            float: left;
+            background-color: red;
+        }*/
+        #p2{
+            width: auto;
+            height: 800px;
+            margin-left: 160px;
+            margin-right: 240px;
+            background-color: red;
+        }
+        #p3{
+            width: 230px;
+            height: 800px;
+            /*margin-right: 10px;*/
+            float: right;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!--<p id="p1">p1</p>
+        <p id="p2">p2</p>
+        <p id="p3">p3</p>-->
+        <p id="p1">p1</p>
+        <p id="p3">p3</p>
+        <p id="p2">p2</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!--该demo是练习固定定位的-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>固定定位应用demo</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            background-color: lightgray;
+            width: 600px;
+        }
+        li{
+            background-color: blue;
+            color: #fff;
+            margin-bottom: 10px;
+            height: 60px;
+            line-height: 60px;/*实现li元素中的字体垂直居中的效果*/
+            position: relative;
+        }
+        input[type="checkbox"]{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 40px;
+            top: 20px;
+        }
+        button{
+            width: 80px;
+            height: 60px;
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            margin-top: -30px;
+        }
+    </style>
+</head>
+<body style="height: 2000px">
+<h2>请选择已读过的书</h2>
+<ul>
+    <li>hello code <input type="checkbox" /></li>
+    <li>master javascript in 21 days <input type="checkbox" /></li>
+    <li>js fullstack path <input type="checkbox" /></li>
+</ul>
+<button>我要反馈</button>
+</body>
+</html>

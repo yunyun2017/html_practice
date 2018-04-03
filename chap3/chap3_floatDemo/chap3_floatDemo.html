@@ -1,0 +1,60 @@
+<!--该demo的作用是：说明展示浮动的作用-->
+<!--该demo中默认p1和p2是上下垂直排列的，使用浮动可以实现左右水平排列的效果-->
+
+<!--该demo中，由于p1和p2元素设置了浮动，所以div元素中只有p3，因此p3会被p1和p2覆盖
+现在想让p3不被p1和p2覆盖，而是位于p1或者p2的下方——用到清除技术-->
+<!--此外，p3设置了清除之后，div也自动包含了p1和p2了，所以div的高度也发生了改变-->
+<!--上面的介绍可以实现父元素围住浮动的子元素，但是由于添加了p3元素，改变了原来的DOM结构，所以可以用伪类选择器来实现-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>浮动作用展示</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 1000px;
+            background-color: lightgray;
+        }
+        #p1{
+            width: 100px;
+            height: 200px;
+            background-color: red;
+            float: left;
+        }
+        #p2{
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            float: right;
+        }
+        /*#p3{*/
+            /*width: 1000px;*/
+            /*height: 50px;*/
+            /*background-color: lightblue;*/
+        /*}*/
+        /*这样就实现了父元素包含住浮动的子元素，并且没有改变父元素的DOM结构，也没有给父元素添加额外空间，
+        实际应用中优先使用的方式*/
+        .clearfix::after{
+            content: ".";
+            clear: both;/*如果只写到这里，包含“.”的这个元素并不会到最底下，因为clear属性针对的是块级元素，
+            这里是行内元素，所以不起作用*/
+            display: block;
+            visibility: hidden;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="clearfix">
+        <p id="p1">p1</p>
+        <p id="p2">p2</p>
+        <!--<p id="p3" style="clear: both">p3</p>-->
+        <!--添加一个伪类来实现父元素包住浮动的子元素的效果，而且不改变原来的DOM结构-->
+    </div>
+    <div style="background-color: #fff">abcd</div>
+</body>
+</html>
