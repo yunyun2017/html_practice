@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Practive</title>
+    <style>
+        body{
+            background-color: #000;}
+        #can1{
+            background-color: #fff;}
+    </style>
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementById("can1");
+            var ogc = canvas.getContext("2d");
+            var a=0;
+
+            ogc.fillRect(0,0,100,100);
+            setInterval(function () {
+                ogc.clearRect(a,a,100,100);
+                a+=2;
+                ogc.fillRect(a,a,100,100);
+            },50);
+
+        }
+    </script>
+</head>
+<body>
+<canvas id="can1" width="400px" height="400px">
+</canvas>
+</body>
+</html>
