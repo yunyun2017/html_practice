@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>建议祖玛</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{
+            background-color: #000;}
+        #div1{
+            background-color: #fff;
+            width: 600px;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oc = document.getElementById("c1");
+            var ogc = oc.getContext("2d");
+
+            var ball = [];
+            ball[0]={
+                x:300,      //当前x
+                y:0,        //当前y
+                r:200,      //当前半径
+                num:0,  //初始角度
+                startX:300, //初始x
+                startY:0       //初始y
+            }
+
+
+
+            // 角度转换为弧度：角度*π/180
+            //重新绘画的定时器
+            setInterval(function () {
+                ogc.clearRect(0,0,oc.width,oc.height);
+
+                ogc.beginPath();
+                ogc.arc(300,200,200,-90*Math.PI/180,180*Math.PI/180,false);
+                ogc.stroke();
+
+                ogc.beginPath();
+                ogc.arc(250,200,150,180*Math.PI/180,0*Math.PI/180,false);
+                ogc.stroke();
+
+                ogc.beginPath();
+                ogc.arc(400,200,20,0*Math.PI/180,360*Math.PI/180,false);
+                ogc.stroke();
+
+                // //画小球，循环画
+                // for(var i=0;i<ball.length;i++){
+                //     ogc.beginPath();
+                //     ogc.moveTo(ball[i].x,ball[i].y);
+                //     ogc.arc(ball[i].x,ball[i].y,20,0*Math.PI/180,360*Math.PI/180,false);
+                //     ogc.fill();
+                // }
+
+            },1000/60);
+
+            //让小球移动的定时器
+            // setInterval(function () {
+            //     for(var i=0;i<ball.length;i++){
+            //         ball[i].num++;  //角度增加
+            //         if(ball[i].num ===270){
+            //             ball[i].r = 150;
+            //             ball[i].startX = 250;
+            //             ball[i].startY = 50;
+            //         }
+            //         if(ball[i].num === 270+180){
+            //             alert("game over!");
+            //             window.location.reload();
+            //         }
+            //         ball[i].x = ball[i].startX+ball[i].r*Math.sin(ball[i].num*Math.PI/180);
+            //         ball[i].y = ball[i].startY+ball[i].r*(1-Math.cos(ball[i].num*Math.PI/180));
+            //
+            //     }
+            // },30);
+
+            //产生多个小球的定时器
+            // setInterval(function () {
+            //     ball.push({
+            //         x:300,      //当前x
+            //         y:0,        //当前y
+            //         r:200,      //当前半径
+            //         num:0,  //初始角度
+            //         startX:300, //初始x
+            //         startY:0       //初始y
+            //     })
+            // },350);
+
+        }
+    </script>
+</head>
+<body>
+    <div id ="div1">
+        <canvas id="c1" width="600" height="600"></canvas>
+    </div>
+</body>
+</html>
