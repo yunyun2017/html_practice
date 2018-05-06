@@ -32,7 +32,8 @@
             var image = new Image();
             image.src = 'images/person.png';
 
-            var i=0;
+            // var i=0;
+            var iRotate = 0;
             // 角度转换为弧度：角度*π/180
             //重新绘画的定时器
             setInterval(function () {
@@ -60,12 +61,37 @@
 
                 ogc.save();
                 ogc.translate(300,200);
-                ogc.rotate(i++*Math.PI/180);
+                ogc.rotate(iRotate);
                 ogc.translate(-40,-40);
                 ogc.drawImage(image,0,0);
                 ogc.restore();
 
             },1000/60);
+            
+            oc.onmousemove = function (ev) {
+                var ev = ev || window.event;
+                var x= ev.clientX-oc.offsetLeft;
+                var y = ev.clientY - oc.offsetTop;
+
+                var a = x-300;
+                var b = 200-y;
+                var c= Math.sqrt(a*a+b*b);
+
+                if(a>0){
+                    if(b>0){    //第一象限
+                        iRotate = Math.asin(a/c);
+                    }
+                    //第二象限
+                    iRotate = Math.asin(-b/c)+90*Math.PI/180;
+                }else {
+                    if(b>0){//第四象限
+                        iRotate = Math.asin(a/c);
+                    }
+                    //第三象限
+                    iRotate = -(Math.asin(-b/c)+90*Math.PI/180);
+                }
+
+            }
 
             //让小球移动的定时器
             // setInterval(function () {
