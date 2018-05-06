@@ -41,7 +41,6 @@
             var image = new Image();
             image.src = 'images/person.png';
 
-            // var i=0;
             var iRotate = 0;
             // 角度转换为弧度：角度*π/180
             //重新绘画的定时器
@@ -60,13 +59,13 @@
                 ogc.arc(400, 200, 20, 0 * Math.PI / 180, 360 * Math.PI / 180, false);
                 ogc.stroke();
 
-                // //画小球，循环画
-                // for(var i=0;i<ball.length;i++){
-                //     ogc.beginPath();
-                //     ogc.moveTo(ball[i].x,ball[i].y);
-                //     ogc.arc(ball[i].x,ball[i].y,20,0*Math.PI/180,360*Math.PI/180,false);
-                //     ogc.fill();
-                // }
+                //画小球，循环画
+                for(var i=0;i<ball.length;i++){
+                    ogc.beginPath();
+                    ogc.moveTo(ball[i].x,ball[i].y);
+                    ogc.arc(ball[i].x,ball[i].y,20,0*Math.PI/180,360*Math.PI/180,false);
+                    ogc.fill();
+                }
 
                 ogc.save();
                 ogc.translate(300, 200);
@@ -77,50 +76,63 @@
 
                 //将子弹在画布中画出来
                 for (var j = 0; j < ballet.length; j++) {
+
+                    ogc.save()
                     ogc.beginPath();
                     ogc.fillStyle = "red";
                     ogc.moveTo(ballet[j].x, ballet[j].y);
                     ogc.arc(ballet[j].x, ballet[j].y, 20, 0 * Math.PI / 180, 360 * Math.PI / 180, false);
                     ogc.fill();
+                    ogc.restore();
+
                 }
 
             }, 1000 / 60);
 
             //让小球移动的定时器
             setInterval(function () {
-                // for(var i=0;i<ball.length;i++){
-                //     ball[i].num++;  //角度增加
-                //     if(ball[i].num ===270){
-                //         ball[i].r = 150;
-                //         ball[i].startX = 250;
-                //         ball[i].startY = 50;
-                //     }
-                //     if(ball[i].num === 270+180){
-                //         alert("game over!");
-                //         window.location.reload();
-                //     }
-                //     ball[i].x = ball[i].startX+ball[i].r*Math.sin(ball[i].num*Math.PI/180);
-                //     ball[i].y = ball[i].startY+ball[i].r*(1-Math.cos(ball[i].num*Math.PI/180));
-                //
-                // }
+                for(var i=0;i<ball.length;i++){
+                    ball[i].num++;  //角度增加
+                    if(ball[i].num ===270){
+                        ball[i].r = 150;
+                        ball[i].startX = 250;
+                        ball[i].startY = 50;
+                    }
+                    if(ball[i].num === 270+180){
+                        alert("game over!");
+                        window.location.reload();
+                    }
+                    ball[i].x = ball[i].startX+ball[i].r*Math.sin(ball[i].num*Math.PI/180);
+                    ball[i].y = ball[i].startY+ball[i].r*(1-Math.cos(ball[i].num*Math.PI/180));
+
+                }
                 //子弹移动
                 for(var j=0;j<ballet.length;j++){
                     ballet[j].x = ballet[j].x + ballet[j].sX;
                     ballet[j].y = ballet[j].y + ballet[j].sY;
+
+                    //碰撞处理
+                    for(var k=0;k<ball.length;k++){
+                        if(crush(ballet[j].x,ballet[j].y,ball[k].x,ball[k].y)){
+                            ball.splice(k,1);
+                            ballet.splice(j,1);
+                        }
+
+                    }
                 }
             },30);
 
             //产生多个小球的定时器
-            // setInterval(function () {
-            //     ball.push({
-            //         x:300,      //当前x
-            //         y:0,        //当前y
-            //         r:200,      //当前半径
-            //         num:0,  //初始角度
-            //         startX:300, //初始x
-            //         startY:0       //初始y
-            //     })
-            // },350);
+            setInterval(function () {
+                ball.push({
+                    x:300,      //当前x
+                    y:0,        //当前y
+                    r:200,      //当前半径
+                    num:0,  //初始角度
+                    startX:300, //初始x
+                    startY:0       //初始y
+                })
+            },350);
 
             oc.onmousemove = function (ev) {
                 var ev = ev || window.event;
@@ -169,6 +181,19 @@
                     sY: sY
                 })
 
+            }
+
+            //碰撞检测原理：检测两个圆的圆心距离是否小于等于两个圆的半径之和，若小于则是碰撞了，否则就是没有碰撞
+            function crush(x1,y1,x2,y2) {
+                var a=x1-x2;
+                var b=y1-y2;
+                var c=Math.sqrt(a*a+b*b);
+
+                if(c<=40){  //碰撞了
+                    return true;
+                }
+                //未碰撞
+                return false;
             }
         }
     </script>
