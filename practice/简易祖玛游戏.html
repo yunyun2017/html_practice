@@ -28,8 +28,11 @@
                 startY:0       //初始y
             }
 
+            //加载图片
+            var image = new Image();
+            image.src = 'images/person.png';
 
-
+            var i=0;
             // 角度转换为弧度：角度*π/180
             //重新绘画的定时器
             setInterval(function () {
@@ -54,6 +57,13 @@
                 //     ogc.arc(ball[i].x,ball[i].y,20,0*Math.PI/180,360*Math.PI/180,false);
                 //     ogc.fill();
                 // }
+
+                ogc.save();
+                ogc.translate(300,200);
+                ogc.rotate(i++*Math.PI/180);
+                ogc.translate(-40,-40);
+                ogc.drawImage(image,0,0);
+                ogc.restore();
 
             },1000/60);
 
