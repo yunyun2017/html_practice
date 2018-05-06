@@ -87,6 +87,20 @@
 
                 }
 
+                //在画布底部添加文字
+                ogc.save();
+                ogc.font="60px impact";
+                ogc.textBaseline="top";
+                ogc.fillStyle="red";
+                ogc.shadowOffsetX=10;
+                ogc.shadowOffsetY=10;
+                ogc.shadowColor="green";
+                ogc.shadowBlur=5;
+                var w=ogc.measureText("简易祖玛").width;
+                var h=60;
+                ogc.fillText("简易祖玛",(oc.width-w)/2,450);
+                ogc.restore();
+
             }, 1000 / 60);
 
             //让小球移动的定时器
